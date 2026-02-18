@@ -72,6 +72,7 @@ body {
   margin-bottom: 25px;
 }
 
+/* ===== BUTTONS ===== */
 .btn {
   display: inline-block;
   background-color: #00c6ff;
@@ -87,9 +88,20 @@ body {
   background-color: #00a8e8;
 }
 
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #00c6ff;
+  color: #00c6ff;
+  margin-left: 10px;
+}
+
 /* ===== SECTIONS ===== */
 .section {
   padding: 70px 90px;
+}
+
+.section.gray {
+  background-color: #eef1f5;
 }
 
 .section h2 {
@@ -106,11 +118,7 @@ body {
   font-size: 16px;
 }
 
-.gray {
-  background-color: #eef1f5;
-}
-
-/* ===== PROJECT CARDS ===== */
+/* ===== CARDS ===== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -135,6 +143,102 @@ body {
   color: #0a2540;
 }
 
+/* ===== EXPERIENCE & TIMELINE ===== */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #2563eb;
+}
+
+.experience-item {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 30px 60px;
+  background: #ffffff;
+  padding: 25px;
+  border-left: 5px solid #2563eb;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  animation: slideUp 0.8s ease forwards;
+}
+
+.experience-item::before {
+  content: '⏳';
+  position: absolute;
+  left: -48px;
+  top: 20px;
+  background: #2563eb;
+  color: white;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+}
+
+.experience-item h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #1f2937;
+}
+
+.experience-item .year {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.experience-item .role {
+  font-weight: 600;
+  color: #2563eb;
+  margin: 10px 0;
+}
+
+.experience-item ul {
+  padding-left: 20px;
+}
+
+.experience-item ul li {
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+/* ===== LEADERSHIP SUMMARY ===== */
+#leadership-summary {
+  padding: 60px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.summary-box {
+  background: #f1f5f9;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+}
+
+.summary-box h3 {
+  font-size: 2rem;
+  color: #2563eb;
+}
+
 /* ===== SKILLS ===== */
 .skills {
   display: flex;
@@ -153,6 +257,23 @@ body {
   font-size: 14px;
 }
 
+/* ===== RESUME BUTTON ===== */
+.resume-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: #1e40af;
+}
+
 /* ===== CONTACT ===== */
 #contact p {
   text-align: center;
@@ -169,7 +290,19 @@ footer {
   font-size: 14px;
 }
 
-/* ===== RESPONSIVE (MOBILE) ===== */
+/* ===== ANIMATIONS ===== */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -185,5 +318,13 @@ footer {
 
   .hero h1 {
     font-size: 36px;
+  }
+
+  .experience-item {
+    margin-left: 40px;
+  }
+
+  .timeline::before {
+    left: 10px;
   }
 }
