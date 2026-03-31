@@ -344,3 +344,47 @@ footer {
     left: 10px;
   }
 }
+/* ===== HERO LAYOUT WITH IMAGE ===== */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* LEFT IMAGE */
+.hero-image img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #00c6ff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* RIGHT CONTENT */
+.hero-content {
+  max-width: 600px;
+}
+
+/* BUTTON SPACING */
+.hero-content .btn {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero {
+    align-items: center;
+    padding: 40px 20px;
+  }
+}
